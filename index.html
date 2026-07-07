@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scrybin — Find every MTG card you own</title>
+  <meta name="description" content="Scrybin remembers where every Magic: The Gathering card in your collection physically lives — even when your cards don't stay sorted. No account, no tracking." />
+  <meta property="og:title" content="Scrybin — Find every MTG card you own" />
+  <meta property="og:description" content="Scrybin tracks exactly which bin every Magic card lives in — and which are checked out in your decks." />
+  <meta property="og:image" content="https://scrybin.app/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/favicon-64.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-head hero on-navy">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/">
+        <img src="/assets/apple-touch-icon.png" alt="" width="34" height="34" />
+        <span>Scrybin</span>
+      </a>
+      <div class="nav-links">
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a class="pill" href="#get">Get the app</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Scrybin for iPhone · Magic: The Gathering</p>
+      <h1>Do I already own this card — <em>and where is it?</em></h1>
+      <p class="lede">
+        Scrybin remembers which bin, box, or deck every Magic card in your
+        collection physically lives in. File cards wherever they land.
+        No sorting, no alphabetizing, no rebuying cards you already own.
+      </p>
+      <div class="cta-row">
+        <!-- TODO: point /app redirect in vercel.json at the real App Store URL once the Scrybin record is live -->
+        <a class="appstore-badge" href="/app" aria-label="Download Scrybin on the App Store">
+          <img src="/assets/appstore-badge.svg" alt="Download on the App Store" width="168" height="56" />
+        </a>
+        <a class="btn-ghost" href="#how-title">See how it works ↓</a>
+      </div>
+      <p class="credibility">Built by a Commander player with shoeboxes of cards.</p>
+    </div>
+
+    <div class="answer" role="img" aria-label="Example search result: Sol Ring, 4 copies — 2 in bin A-01, 1 in bin BOX-03, 1 checked out in the deck Sol Ring EDH">
+      <div class="searchbar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+        <span class="q">sol ring</span>
+        <span class="caret" aria-hidden="true"></span>
+      </div>
+      <h2>Sol Ring</h2>
+      <p class="setline">Commander Masters · Artifact</p>
+      <p class="copies">4 copies · 3 filed · 1 checked out</p>
+      <ul>
+        <li><span class="chip">A-01</span> <span class="where">×2 · shelf binder</span></li>
+        <li><span class="chip">BOX-03</span> <span class="where">×1 · bulk box</span></li>
+        <li class="deck"><span class="chip gold">DECK</span> <span class="where">×1 · Sol Ring EDH</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <p class="kicker">Chaotic storage, zero reorganizing</p>
+      <h2 class="title" id="how-title">Your cards don't stay sorted. Scrybin doesn't ask them to.</h2>
+      <p class="section-lede">
+        Most collection apps assume tidy, alphabetized binders. Scrybin works the
+        way real collections do: cards land in whatever box is open, and the app
+        keeps the map.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <span class="n">STEP 1</span>
+          <h3>File cards wherever they land</h3>
+          <p>Add a card to any bin, box, or shelf, under whatever name is on the label. Scrybin records the location of every copy.</p>
+          <div class="chips"><span class="chip">A-01</span> <span class="chip">BOX-03</span> <span class="chip">SHELF-B</span></div>
+        </div>
+        <div class="step">
+          <span class="n">STEP 2</span>
+          <h3>Search when you need one</h3>
+          <p>Look up any card by name, set, or location. Every copy you own comes back with its exact spot, in seconds.</p>
+          <div class="chips"><span class="chip">3 copies found</span></div>
+        </div>
+        <div class="step">
+          <span class="n">STEP 3</span>
+          <h3>Check out into decks</h3>
+          <p>Move cards from bins into a deck, then check the whole deck back into any bin when you take it apart. Every move is recorded.</p>
+          <div class="chips"><span class="chip gold">DECK · Mono Red</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screens" aria-labelledby="screens-title">
+    <div class="wrap">
+      <p class="kicker">On your phone, next to your boxes</p>
+      <h2 class="title" id="screens-title">Built for the shoebox era of your collection</h2>
+      <div class="stage">
+        <div class="stage-phone">
+          <img src="/assets/screenshots/02-bins.png" alt="Scrybin inventory screen listing bins named Blue Control, Commander Staples, Game Night Box, Green Ramp, Removal Box, and Trade Binder, each with its card count" width="828" height="1791" />
+          <div class="callout left" style="top: 20%" aria-hidden="true">
+            <span class="tag">Bins, decks, precons, loose</span>
+            <span class="line"></span>
+          </div>
+          <div class="callout right" style="top: 38.5%" aria-hidden="true">
+            <span class="line"></span>
+            <span class="tag">Audit filters catch drift</span>
+          </div>
+          <div class="callout right" style="top: 63%" aria-hidden="true">
+            <span class="line"></span>
+            <span class="tag">Named after your real boxes</span>
+          </div>
+        </div>
+      </div>
+      <div class="shelf">
+        <figure class="shot">
+          <img src="/assets/screenshots/01-home.png" alt="Scrybin home screen showing collection totals, a work queue, and recently added cards" loading="lazy" width="828" height="1791" />
+          <figcaption>Home</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/screenshots/05-search.png" alt="Card search with instant Scryfall suggestions" loading="lazy" width="828" height="1791" />
+          <figcaption>Find</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/screenshots/04-deck-detail.png" alt="Deck detail showing which cards are checked out and which are still in bins" loading="lazy" width="828" height="1791" />
+          <figcaption>Decks</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/screenshots/03-decks.png" alt="Deck list with card counts and completion" loading="lazy" width="828" height="1791" />
+          <figcaption>Deck list</figcaption>
+        </figure>
+      </div>
+      <p class="swipe-hint" aria-hidden="true">swipe →</p>
+    </div>
+  </section>
+
+  <section class="toolkit" aria-labelledby="features-title">
+    <div class="wrap">
+      <p class="kicker">The full toolkit</p>
+      <h2 class="title" id="features-title">Everything else it does</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="chip">FIND</span>
+          <h3>Find any card</h3>
+          <p>Search by name, set, or location. See how many copies you own, which bin each one is in, and which are out in a deck.</p>
+        </div>
+        <div class="feature">
+          <span class="chip gold">DECKS</span>
+          <h3>Track decks &amp; checkouts</h3>
+          <p>Check cards out of bins into decks and back again. A card's full movement history is always there.</p>
+        </div>
+        <div class="feature">
+          <span class="chip">SETS</span>
+          <h3>Lock a bin to a set</h3>
+          <p>Dedicate a bin to a single MTG set and file into it with confidence. Scrybin flags anything that doesn't belong.</p>
+        </div>
+        <div class="feature">
+          <span class="chip">IMPORT</span>
+          <h3>Import your collection</h3>
+          <p>Bring your cards in from a CSV, including ManaBox exports, and start finding cards the same day.</p>
+        </div>
+        <div class="feature">
+          <span class="chip gold">EXPORT</span>
+          <h3>Export anytime</h3>
+          <p>Your data walks out the door whenever you want it: native CSV or Moxfield format. No lock-in.</p>
+        </div>
+        <div class="feature">
+          <span class="chip">AUDIT</span>
+          <h3>Audit your bins</h3>
+          <p>Work through a bin row by row to confirm the app matches the cardboard, and catch drift before it spreads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-band on-navy" aria-labelledby="privacy-title">
+    <div class="wrap inner">
+      <div>
+        <h2 id="privacy-title">No account. No backend. No tracking.</h2>
+        <p>
+          Your collection lives on your device. Scrybin has no servers to send it
+          to. Card names and images come from Scryfall; nothing about you does.
+        </p>
+      </div>
+      <a class="button" href="/privacy">Read the privacy policy</a>
+    </div>
+  </section>
+
+  <section class="get on-navy" id="get" aria-labelledby="get-title">
+    <div class="wrap">
+      <h2 id="get-title">Know where every card is <em>by tonight.</em></h2>
+      <p>Import your collection from a CSV, file the loose piles into whatever boxes they're already in, and stop rebuying cards you own.</p>
+      <div class="actions">
+        <a class="appstore-badge" href="/app" aria-label="Download Scrybin on the App Store">
+          <img src="/assets/appstore-badge.svg" alt="Download on the App Store" width="168" height="56" />
+        </a>
+        <div class="qr-wrap">
+          <div class="qr"><img src="/assets/qr-app.svg" alt="QR code linking to Scrybin on the App Store" width="108" height="108" /></div>
+          <p class="qr-caption">Scan with your iPhone</p>
+        </div>
+      </div>
+      <span class="cta-note">Free · iPhone · iOS&nbsp;17+ · no account required</span>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <a class="brand" href="/">
+        <img src="/assets/apple-touch-icon.png" alt="" width="28" height="28" />
+        <span>Scrybin</span>
+      </a>
+      <nav aria-label="Footer">
+        <a href="#get">Get the app</a>
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy policy</a>
+        <a href="mailto:solomon@devsdecide.com">Contact</a>
+      </nav>
+    </div>
+    <div class="fineprint">
+      <p>Card data and imagery are provided by <a href="https://scryfall.com">Scryfall</a>. Scrybin is not produced by, endorsed by, or affiliated with Scryfall.</p>
+      <p>Scrybin is unofficial Fan Content permitted under the Wizards of the Coast Fan Content Policy. Not approved or endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast, LLC. Magic: The Gathering is a trademark of Wizards of the Coast, LLC.</p>
+      <p>© 2026 Scrybin.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

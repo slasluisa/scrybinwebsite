@@ -1,0 +1,136 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="squircle"><rect x="0" y="0" width="1024" height="1024" rx="229" ry="229"/></clipPath>
+
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16266A"/>
+      <stop offset="0.6" stop-color="#0B1538"/>
+      <stop offset="1" stop-color="#070C26"/>
+    </linearGradient>
+
+    <radialGradient id="scryGlow" cx="0.5" cy="0.24" r="0.60">
+      <stop offset="0" stop-color="#4C86FF" stop-opacity="0.42"/>
+      <stop offset="0.65" stop-color="#2E55C4" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#2E55C4" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7FAFF"/>
+      <stop offset="0.55" stop-color="#E4EBFC"/>
+      <stop offset="1" stop-color="#C6D3EF"/>
+    </linearGradient>
+
+    <linearGradient id="backFaceA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3D4F92"/>
+      <stop offset="1" stop-color="#2A3870"/>
+    </linearGradient>
+    <linearGradient id="backFaceB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4A5CA3"/>
+      <stop offset="1" stop-color="#33417C"/>
+    </linearGradient>
+    <linearGradient id="frontLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7288D8" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#7288D8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="artWindow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2C6E"/>
+      <stop offset="0.75" stop-color="#27418F"/>
+      <stop offset="1" stop-color="#3C5CB4"/>
+    </linearGradient>
+
+    <linearGradient id="goldEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F5A623"/>
+      <stop offset="0.5" stop-color="#FFE08A"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </linearGradient>
+
+    <linearGradient id="binFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4660BE"/>
+      <stop offset="0.4" stop-color="#33499E"/>
+      <stop offset="1" stop-color="#1D2C68"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="wideGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="cardShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="smallBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <g>
+    <!-- background -->
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+    <rect width="1024" height="1024" fill="url(#scryGlow)"/>
+
+    <!-- bin mouth -->
+    <rect x="180" y="596" width="664" height="60" rx="20" fill="#060C24"/>
+    <rect x="196" y="594" width="632" height="5" rx="2.5" fill="#7288C8" opacity="0.5"/>
+
+    <!-- uniform row of seated card tops -->
+    <rect x="196" y="570" width="96" height="102" rx="10" fill="#4F639F"/>
+    <rect x="196" y="570" width="96" height="7" rx="3.5" fill="#8B9CCE"/>
+    <rect x="295" y="570" width="96" height="102" rx="10" fill="#48598F"/>
+    <rect x="295" y="570" width="96" height="7" rx="3.5" fill="#8093C6"/>
+    <rect x="633" y="570" width="96" height="102" rx="10" fill="#48598F"/>
+    <rect x="633" y="570" width="96" height="7" rx="3.5" fill="#8093C6"/>
+    <rect x="732" y="570" width="96" height="102" rx="10" fill="#4F639F"/>
+    <rect x="732" y="570" width="96" height="7" rx="3.5" fill="#8B9CCE"/>
+
+    <!-- ==== the fan: three cards pivoting from inside the box ==== -->
+
+    <!-- back-left card (card back) -->
+    <g transform="rotate(-14 512 900)">
+      <rect x="368" y="182" width="288" height="430" rx="24" fill="url(#backFaceA)"/>
+      <rect x="368" y="182" width="288" height="430" rx="24" fill="none" stroke="#A7B7EA" stroke-width="6" opacity="0.9"/>
+    </g>
+
+    <!-- back-right card (card back) -->
+    <g transform="rotate(12 512 900)">
+      <rect x="368" y="192" width="288" height="430" rx="24" fill="url(#backFaceB)"/>
+      <rect x="368" y="192" width="288" height="430" rx="24" fill="none" stroke="#A7B7EA" stroke-width="6" opacity="0.9"/>
+    </g>
+
+    <!-- front card shadow -->
+    <g transform="rotate(-2 512 900)">
+      <rect x="360" y="150" width="304" height="470" rx="26" fill="#04081A" opacity="0.55" filter="url(#cardShadow)" transform="translate(10 22)"/>
+    </g>
+
+    <!-- front card: light face, full anatomy, gold lit top edge -->
+    <g transform="rotate(-2 512 900)">
+      <rect x="360" y="150" width="304" height="470" rx="26" fill="url(#cardFace)"/>
+      <rect x="380" y="170" width="264" height="430" rx="15" fill="none" stroke="#8FA6D9" stroke-width="4" opacity="0.65"/>
+      <clipPath id="artClipFan"><rect x="392" y="188" width="240" height="182" rx="10"/></clipPath>
+      <rect x="392" y="188" width="240" height="182" rx="10" fill="url(#artWindow)"/>
+      <g clip-path="url(#artClipFan)">
+        <!-- Moonrise II interior: dark horizon band, lit edge, moon touching it, reflection -->
+        <rect x="392" y="330" width="240" height="40" fill="#0E1B4A"/>
+        <rect x="392" y="324" width="240" height="8" fill="#7FA8FF" opacity="0.55" filter="url(#smallBlur)"/>
+        <circle cx="572" cy="322" r="28" fill="#CFE0FF" opacity="0.5" filter="url(#smallBlur)"/>
+        <circle cx="572" cy="322" r="24" fill="#DCE8FF"/>
+        <rect x="552" y="348" width="40" height="5" rx="2.5" fill="#9FBEFF" opacity="0.5"/>
+      </g>
+      <rect x="392" y="188" width="240" height="182" rx="10" fill="none" stroke="#0E1B4A" stroke-width="4" opacity="0.5"/>
+      <rect x="392" y="388" width="240" height="196" rx="10" fill="#8CA4D8" opacity="0.18"/>
+      <rect x="392" y="388" width="240" height="196" rx="10" fill="none" stroke="#8FA6D9" stroke-width="3" opacity="0.5"/>
+      <rect x="360" y="150" width="304" height="20" rx="10" fill="url(#goldEdge)" filter="url(#wideGlow)" opacity="0.95"/>
+      <rect x="360" y="150" width="304" height="15" rx="7" fill="url(#goldEdge)"/>
+    </g>
+
+    <!-- interior shadow where the fan enters the box -->
+    <rect x="300" y="608" width="430" height="14" rx="7" fill="#04081A" opacity="0.4" filter="url(#smallBlur)"/>
+
+    <!-- box front: plain card-box front, no plate -->
+    <rect x="172" y="644" width="680" height="308" rx="48" fill="url(#binFront)"/>
+    <rect x="172" y="644" width="680" height="12" rx="6" fill="#A9BCF2"/>
+    <rect x="172" y="656" width="680" height="24" fill="#101A45" opacity="0.4"/>
+    <rect x="172" y="656" width="680" height="180" fill="url(#frontLight)"/>
+  </g>
+</svg>
