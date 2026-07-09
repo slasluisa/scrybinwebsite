@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+  <script src="/hero.js" defer></script>
 </head>
 <body>
 
@@ -108,23 +109,17 @@
 
   <section class="screens" aria-labelledby="screens-title">
     <div class="wrap">
-      <p class="kicker">On your phone, next to your boxes</p>
+      <p class="kicker">One continuous take, real app</p>
       <h2 class="title" id="screens-title">Built for the shoebox era of your collection</h2>
       <div class="stage">
         <div class="stage-phone">
-          <img src="/assets/screenshots/02-bins.png" alt="Scrybin inventory screen listing bins named Blue Control, Commander Staples, Game Night Box, Green Ramp, Removal Box, and Trade Binder, each with its card count" width="828" height="1791" />
-          <div class="callout left" style="top: 20%" aria-hidden="true">
-            <span class="tag">Bins, decks, precons, loose</span>
-            <span class="line"></span>
-          </div>
-          <div class="callout right" style="top: 38.5%" aria-hidden="true">
-            <span class="line"></span>
-            <span class="tag">Audit filters catch drift</span>
-          </div>
-          <div class="callout right" style="top: 63%" aria-hidden="true">
-            <span class="line"></span>
-            <span class="tag">Named after your real boxes</span>
-          </div>
+          <video autoplay muted loop playsinline preload="metadata"
+                 poster="/assets/demo-reel-poster.jpg" width="792" height="1722"
+                 aria-label="Screen recording of Scrybin: typing Sol Ring into search, seeing every copy across bins and decks, opening the Removal Box bin, and auditing it card by card">
+            <source src="/assets/demo-reel.mp4" type="video/mp4" />
+            <img src="/assets/screenshots/02-bins.png" alt="Scrybin inventory screen listing bins named Blue Control, Commander Staples, Game Night Box, Green Ramp, Removal Box, and Trade Binder, each with its card count" width="828" height="1791" />
+          </video>
+          <p class="stage-caption" aria-hidden="true">search “sol ring” → open a bin → audit it, card by card</p>
         </div>
       </div>
       <div class="shelf">
