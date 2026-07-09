@@ -179,6 +179,38 @@
   });
 })();
 
+/* How-it-works steps: when the section scrolls into view, the rail draws and
+   a card rides it station to station, popping each step in as it arrives.
+   Without JS (or with reduced motion) the section is simply static. */
+(function () {
+  "use strict";
+
+  var steps = document.querySelector(".how .steps");
+  if (!steps || !("matchMedia" in window) || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  steps.classList.add("js");
+
+  var stepEls = steps.querySelectorAll(".step");
+  var lastStep = stepEls[stepEls.length - 1];
+  steps.addEventListener("animationend", function (e) {
+    // release the fill-mode once the sequence lands, so hover transforms work
+    if (e.animationName === "step-pop" && e.target === lastStep) {
+      steps.classList.add("played");
+    }
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        steps.classList.add("play");
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.35 });
+  io.observe(steps);
+})();
+
 /* Demo-reel video: never autoplay for reduced-motion visitors (hand them
    controls instead), and only run while it's actually on screen. */
 (function () {
