@@ -108,13 +108,14 @@ a:hover { color: var(--indigo); }
 }
 .on-navy .chip.gold::before { background: var(--gold); }
 
-/* The answer card is a light surface inside the navy hero — restore the light-surface chip variant */
+/* The answer card is a light surface inside the navy hero. Its chips mirror the
+   app's Find results: mint for bins, gold for decks. */
 .answer .chip {
-  background: rgba(77, 135, 255, 0.14);
-  color: var(--indigo);
-  border-color: rgba(51, 74, 158, 0.35);
+  background: #e3f4ec;
+  color: #1f7a5c;
+  border-color: rgba(31, 122, 92, 0.28);
 }
-.answer .chip::before { background: var(--blue); }
+.answer .chip::before { background: #2f9d78; }
 .answer .chip.gold {
   background: rgba(245, 166, 36, 0.14);
   color: #8a5a0a;
@@ -282,40 +283,99 @@ a:hover { color: var(--indigo); }
   width: 2px; height: 1.1em;
   background: var(--blue);
 }
+.answer .searchbar .clear {
+  margin-left: auto;
+  flex: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #c6cbdb;
+  color: #fff;
+  font-size: 0.6rem;
+  line-height: 18px;
+  text-align: center;
+}
 
-.answer h2 {
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-.answer .setline {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  margin: 2px 0 16px;
-}
-.answer .copies {
-  font-family: var(--mono);
+.answer .filters {
+  display: flex;
+  gap: 18px;
   font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--blue);
+  margin: -8px 2px 16px;
 }
-.answer ul { list-style: none; display: grid; gap: 8px; }
+
+.answer .sect {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.answer .results-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 16px 0 8px;
+}
+.answer .results-head .count {
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: #9aa1bd;
+}
+
+.answer .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.answer .stat {
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 10px 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.25;
+}
+.answer .ico {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 5px;
+}
+.answer .ico svg { width: 14px; height: 14px; }
+.answer .ico.total { background: #eceffc; color: #5b6bd6; }
+.answer .ico.bins  { background: #e3f4ec; color: #2f9d78; }
+.answer .ico.decks { background: #fdf0e0; color: #dd8f35; }
+.answer .num { font-weight: 700; font-size: 1.3rem; color: var(--ink); }
+.answer .lab { font-size: 0.72rem; color: var(--ink-soft); }
+
+.answer ul { list-style: none; display: grid; gap: 8px; min-height: 236px; align-content: start; }
 .answer li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   background: #ffffff;
   border: 1px solid var(--hairline);
   border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.95rem;
+  padding: 10px 12px;
 }
-.answer li .where { color: var(--ink-soft); font-size: 0.88rem; }
 .answer li.deck { border-color: rgba(245, 166, 36, 0.45); background: #fffaf0; }
+.answer .thumb {
+  flex: none;
+  width: 36px; height: 50px;
+  border-radius: 4px;
+  background:
+    radial-gradient(60% 40% at 50% 42%, rgba(120, 132, 178, 0.55), transparent 70%),
+    linear-gradient(150deg, #3d4257, #232739);
+  border: 1px solid rgba(19, 24, 48, 0.25);
+}
+.answer .rowtext { display: grid; gap: 3px; justify-items: start; min-width: 0; }
+.answer .rname { font-weight: 600; font-size: 0.95rem; line-height: 1.2; color: var(--ink); }
+.answer .rset { font-size: 0.78rem; color: var(--ink-soft); }
+.answer .rowtext .chip { font-size: 0.68rem; }
 
 /* the looping demo: hero.js types a query, the results settle in, then the
    next lookup begins. Without JS (or with reduced motion) the card is static. */
@@ -330,8 +390,6 @@ a:hover { color: var(--indigo); }
   transform: none;
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
-/* keep the card's height steady while result rows swap out */
-.answer ul { min-height: 158px; align-content: start; }
 
 /* ---------- Sections ---------- */
 

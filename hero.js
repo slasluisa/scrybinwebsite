@@ -9,44 +9,50 @@
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   var q = card.querySelector(".q");
-  var name = card.querySelector("h2");
-  var setline = card.querySelector(".setline");
-  var copies = card.querySelector(".copies");
+  var stats = card.querySelectorAll(".stat");
+  var nums = card.querySelectorAll(".stat .num");
+  var answerHead = card.querySelector(".answer-head");
+  var resultsHead = card.querySelector(".results-head");
+  var count = card.querySelector(".results-head .count");
   var list = card.querySelector("ul");
-  if (!q || !name || !setline || !copies || !list) return;
+  if (!q || stats.length !== 3 || !answerHead || !resultsHead || !count || !list) return;
 
+  // Mirrors the app's Find screen against the demo collection.
   var scenarios = [
     {
       q: "sol ring",
       name: "Sol Ring",
-      setline: "Commander Masters · Artifact",
-      copies: "4 copies · 3 filed · 1 checked out",
+      set: "Commander Masters · #352",
+      stats: [15, 11, 4],
+      count: "15 locations · 15 total",
       rows: [
-        { chip: "A-01", where: "×2 · shelf binder" },
-        { chip: "BOX-03", where: "×1 · bulk box" },
-        { chip: "DECK", gold: true, where: "×1 · Sol Ring EDH" }
+        { chip: "COMMANDER STAPLES" },
+        { chip: "GAME NIGHT BOX" },
+        { chip: "ATRAXA SUPERFRIENDS", gold: true }
       ]
     },
     {
       q: "cyclonic rift",
       name: "Cyclonic Rift",
-      setline: "Commander Masters · Instant",
-      copies: "3 copies · 2 filed · 1 checked out",
+      set: "Commander Masters · #76",
+      stats: [8, 7, 1],
+      count: "8 locations · 8 total",
       rows: [
-        { chip: "B-02", where: "×1 · blue control box" },
-        { chip: "TRADE", where: "×1 · trade binder · foil" },
-        { chip: "DECK", gold: true, where: "×1 · Atraxa Superfriends" }
+        { chip: "COMMANDER STAPLES" },
+        { chip: "BLUE CONTROL" },
+        { chip: "YURIKO NINJAS", gold: true }
       ]
     },
     {
-      q: "llanowar elves",
-      name: "Llanowar Elves",
-      setline: "Foundations · Creature",
-      copies: "5 copies · all filed",
+      q: "lightning bolt",
+      name: "Lightning Bolt",
+      set: "Foundations · #134",
+      stats: [14, 13, 1],
+      count: "14 locations · 14 total",
       rows: [
-        { chip: "SHELF-B", where: "×2 · green ramp box" },
-        { chip: "A-01", where: "×2 · shelf binder" },
-        { chip: "BOX-03", where: "×1 · bulk box" }
+        { chip: "REMOVAL BOX" },
+        { chip: "TRADE BINDER" },
+        { chip: "KAALIA, ANGELS & DEMONS", gold: true }
       ]
     }
   ];
@@ -66,29 +72,33 @@
     window.setTimeout(function () { if (g === gen) fn(); }, ms);
   }
 
+  function span(cls, text) {
+    var el = document.createElement("span");
+    el.className = cls;
+    el.textContent = text;
+    return el;
+  }
+
   function render(s) {
-    name.textContent = s.name;
-    setline.textContent = s.setline;
-    copies.textContent = s.copies;
+    for (var n = 0; n < 3; n++) nums[n].textContent = s.stats[n];
+    count.textContent = s.count;
     list.textContent = "";
     for (var i = 0; i < s.rows.length; i++) {
       var r = s.rows[i];
       var li = document.createElement("li");
       if (r.gold) li.className = "deck";
-      var chip = document.createElement("span");
-      chip.className = r.gold ? "chip gold" : "chip";
-      chip.textContent = r.chip;
-      var where = document.createElement("span");
-      where.className = "where";
-      where.textContent = r.where;
-      li.appendChild(chip);
-      li.appendChild(where);
+      li.appendChild(span("thumb", ""));
+      var text = span("rowtext", "");
+      text.appendChild(span("rname", s.name));
+      text.appendChild(span("rset", s.set));
+      text.appendChild(span(r.gold ? "chip gold" : "chip", r.chip));
+      li.appendChild(text);
       list.appendChild(li);
     }
   }
 
   function results() {
-    return [name, setline, copies].concat(
+    return [answerHead, stats[0], stats[1], stats[2], resultsHead].concat(
       Array.prototype.slice.call(list.children)
     );
   }
@@ -102,11 +112,13 @@
 
   function revealResults(done) {
     var els = results();
-    // headline block first, then each bin row
+    // the Answer header and stat tiles land together, then each result row
     els[0].classList.add("in");
     els[1].classList.add("in");
     els[2].classList.add("in");
-    var i = 3;
+    els[3].classList.add("in");
+    els[4].classList.add("in");
+    var i = 5;
     (function next() {
       if (i >= els.length) { later(done, HOLD_MS); return; }
       els[i].classList.add("in");
